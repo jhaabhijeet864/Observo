@@ -1,4 +1,4 @@
-# 🛰️ Observo: DualityAI Space Station Model for Object Detection 🚀
+# 🛰️ Observo: DualityAI Space Station Model 🚀
 
 Welcome to **Observo** — a high-performance AI model for object detection, inspired by the complexity and wonder of space exploration! 🌌
 
