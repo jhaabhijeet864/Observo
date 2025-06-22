@@ -1,0 +1,9 @@
+# paths relative to project root
+path: ../data/raw
+train: train/images
+val: val/images
+test: test/images
+
+# 3 classes, matching Falcon labels
+nc: 3
+names: ['toolbox','oxygen_tank','fire_extinguisher']

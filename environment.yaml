@@ -1,0 +1,15 @@
+name: observo
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+    - ultralytics        # YOLOv8  
+    - torch              # will install cuda-enabled if available  
+    - torchvision
+    - opencv-python
+    - matplotlib
+    - pandas
+    - flask              # or fastapi + uvicorn
+    - jinja2             # for HTML templating

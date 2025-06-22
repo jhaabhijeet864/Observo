@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Space Station Object Detection</title></head>
+  <body>
+    <h1>Upload an Image</h1>
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required/>
+      <button type="submit">Detect</button>
+    </form>
+    {% if img_out %}
+      <h2>Result:</h2>
+      <img src="{{ url_for('uploads', filename=img_out) }}" width="640"/>
+    {% endif %}
+  </body>
+</html>
