@@ -1,4 +1,4 @@
-# Duality AI Space Station Detection  
+# Observo: A DualityAI Space Station Model for Object Detection
 ## Setup  
 1. `conda env create -f environment.yaml`  
 2. `conda activate Observo`  
