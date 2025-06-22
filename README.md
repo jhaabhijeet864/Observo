@@ -1,19 +1,66 @@
-# Observo: A DualityAI Space Station Model for Object Detection
-## Setup  
-1. `conda env create -f environment.yaml`  
-2. `conda activate Observo`  
+# 🛰️ Observo: DualityAI Space Station Model for Object Detection 🚀
 
-## Data  
-Download and unzip the Falcon dataset into `data/raw/`  
+Welcome to **Observo** — a high-performance AI model for object detection, inspired by the complexity and wonder of space exploration! 🌌
 
-## Train  
-`python src/train.py`  
+---
 
-## Inference  
-`python src/detect.py data/raw/test/images/sample.jpg`  
+## ⚡️ Quick Setup
 
-## Demo App  
+1️⃣ **Create Environment**  
 ```bash
-cd app
-pip install -r requirements.txt
-python backend.py
+conda env create -f environment.yaml
+```
+
+2️⃣ **Activate Environment**  
+```bash
+conda activate Observo
+```
+
+---
+
+## 📦 Data Preparation
+
+- ⬇️ Download and unzip the **Falcon dataset** into the following directory:  
+  ```
+  data/raw/
+  ```
+
+---
+
+## 🏋️‍♂️ Training
+
+Train the model with a single command:  
+```bash
+python src/train.py
+```
+
+---
+
+## 🔍 Inference
+
+Run object detection on a sample image:  
+```bash
+python src/detect.py data/raw/test/images/sample.jpg
+```
+
+---
+
+## 🖥️ Demo Application
+
+1. Move to the app directory:
+    ```bash
+    cd app
+    ```
+2. Install requirements:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3. Start the backend server:
+    ```bash
+    python backend.py
+    ```
+
+---
+
+✨ Enjoy exploring the universe of possibilities with Observo!  
+Feel free to ⭐️ the repo, open issues, or contribute!
