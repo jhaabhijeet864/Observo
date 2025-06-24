@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
-<h1 align="center">VISTA-S: Visual Inference System for Target Assessment 🛰 </h1>
+<h1 align="center">VISTA-S: Visual Inference System for Target Assessment  </h1>
 <h2 align="center">DualityAI Space Station Model </h2>
 
 <p align="center">
