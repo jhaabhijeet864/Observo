@@ -9,7 +9,7 @@
 
 <p align="center">
   <b>Welcome to <strong>VISTA</strong></b> — an advanced, high-performance AI model designed for <b>object detection</b> with unparalleled precision.
-  Inspired by the vast complexity and endless wonder of space exploration, Observo brings cutting-edge computer vision capabilities to your fingertips. 🌌
+  Inspired by the vast complexity and endless wonder of space exploration, VISTA brings cutting-edge computer vision capabilities to your fingertips. 🌌
 </p>
 
 ---
@@ -38,7 +38,7 @@
 
 ## ⚡️ Quick Setup Guide
 
-Get Observo up and running in a few simple steps!
+Get VISTA up and running in a few simple steps!
 
 ### 1. Create Environment
 
@@ -49,7 +49,7 @@ conda env create -f environment.yaml
 ### 2. Activate Environment
 
 ```bash
-conda activate Observo
+conda activate VISTA
 ```
 
 ---
@@ -94,7 +94,7 @@ python src/detect.py data/raw/test/images/sample.jpg
 
 ### 🖥️ Demo Application
 
-Experience Observo through its interactive web application:
+Experience VISTA-S through its interactive web application:
 
 1. **Navigate to App Directory:**
 
