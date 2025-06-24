@@ -25,12 +25,20 @@ data/raw/
 
 # Conda environment
 /env/
+/observo_env/
 
 # Model files
 *.pth
 *.onnx
 *.h5
+*.pt
+
+# Installers
+miniconda.exe
 
 # IDE
 .idea/
 .vscode/
+
+#nbk
+notebooks/
