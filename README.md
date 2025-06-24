@@ -4,8 +4,8 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
-<h1 align="center">VISTA: Visual Inference System for Target Assessment 🚀</h1>
-<h2 align="center">DualityAI Space Station Model | Observo</h2>
+<h1 align="center">VISTA-S: Visual Inference System for Target Assessment - Space 🚀</h1>
+<h2 align="center">DualityAI Space Station Model </h2>
 
 <p align="center">
   <b>Welcome to <strong>VISTA</strong></b> — an advanced, high-performance AI model designed for <b>object detection</b> with unparalleled precision.
@@ -28,13 +28,11 @@
 > *Insert a high-resolution, full-landscape image of the frontend interface here. Ideally, this would be a screenshot showcasing the object detection results on an image.*
 
 ```markdown
-![Frontend Interface Screenshot 1](assets/observo_screenshot_1.png)
 ```
 
 > *Insert another high-resolution, full-landscape image of the frontend interface here, perhaps demonstrating a different feature or a more complex detection scenario.*
 
 ```markdown
-![Frontend Interface Screenshot 2](assets/observo_screenshot_2.png)
 ```
 
 ---
