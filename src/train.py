@@ -4,7 +4,6 @@ from ultralytics import YOLO
 import yaml
 import torch
 
-# Force torchvision to use CPU for NMS operation
 def patch_torchvision_nms_to_cpu():
     try:
         import torchvision
@@ -12,13 +11,13 @@ def patch_torchvision_nms_to_cpu():
             original_nms = torchvision.ops.nms
             
             def cpu_nms(boxes, scores, iou_threshold):
-                # Move tensors to CPU before NMS
+                
                 boxes_cpu = boxes.cpu() if boxes.is_cuda else boxes
                 scores_cpu = scores.cpu() if scores.is_cuda else scores
                 indices = original_nms(boxes_cpu, scores_cpu, iou_threshold)
                 return indices
             
-            # Replace the original NMS with our CPU version
+   
             torchvision.ops.nms = cpu_nms
             print("Patched torchvision NMS to use CPU backend")
     except Exception as e:
@@ -34,36 +33,39 @@ def main():
             # Apply NMS patch if using CUDA
             patch_torchvision_nms_to_cpu()
             
-        # Path to YOLO configuration file
+        
         data_config = os.path.join(os.path.dirname(__file__), '../data/raw/yolo_params.yaml')
         
-        # Ensure the config file exists
+        
         if not os.path.exists(data_config):
             raise FileNotFoundError(f"Configuration file not found: {data_config}")
         
-        # Initialize the YOLO model with pre-trained weights
+
         model = YOLO('yolov8s.pt')  # Using YOLOv8 small model
         
         print(f"Starting training with configuration from {data_config}")
-          # Train the model with specified parameters        # Force CUDA operations but with CPU NMS
+
         results = model.train(
             data=data_config,
-            epochs=100,
-            imgsz=640,
-            batch=16,
+            epochs=100,  # Reduced epochs for faster training and less memory usage
+            imgsz=512,  # Reduced image size
+            batch=4,    # Reduced batch size
             project='../models/logs',
             name='yolov8_observo',
             exist_ok=True,
-            mosaic=0.1,
+            mosaic=0.8,
+            mixup=0.2,
+            cutmix=0.2,
             optimizer='AdamW',
-            lr0=0.001,
-            lrf=0.0001,
+            lr0=0.01,
+            lrf=0.001,
+            weight_decay=0.001,
             momentum=0.2,
             patience=15,
             save=True,
             single_cls=False,
             device=device,
-            nms=False  # Disable NMS in CUDA to avoid issues
+            nms=False  
         )
         print('Training complete. Model weights and logs saved to ../models/logs/yolov8_observo/')
         return results

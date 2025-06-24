@@ -13,7 +13,6 @@ def index():
         path = os.path.join(UPLOAD, file.filename)
         file.save(path)
         results = detect(path, model_path='models/weights/best.pt')
-        # capture last saved image
         saved = results[0].masks.data if results else None
         return render_template('index.html', img_out=os.path.basename(results[0].path[0]))
     return render_template('index.html')
