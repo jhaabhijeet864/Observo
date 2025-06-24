@@ -1,41 +1,41 @@
-
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python" alt="Python Version">
   <img src="https://img.shields.io/badge/PyTorch-1.9%2B-orange?style=for-the-badge&logo=pytorch" alt="PyTorch Version">
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
-# VISTA: Visual Inference System for Target Assessment 🚀
-## DualityAI Space Station Model | Observo
+<h1 align="center">VISTA: Visual Inference System for Target Assessment 🚀</h1>
+<h2 align="center">DualityAI Space Station Model | Observo</h2>
 
 <p align="center">
-  Welcome to **Observo** — an advanced, high-performance AI model designed for **object detection** with unparalleled precision. Inspired by the vast complexity and endless wonder of space exploration, Observo brings cutting-edge computer vision capabilities to your fingertips. 🌌
+  <b>Welcome to <strong>Observo</strong></b> — an advanced, high-performance AI model designed for <b>object detection</b> with unparalleled precision.<br>
+  Inspired by the vast complexity and endless wonder of space exploration, Observo brings cutting-edge computer vision capabilities to your fingertips. 🌌
 </p>
 
 ---
 
 ## ✨ Features & Highlights
 
-* **High-Precision Object Detection:** Leveraging state-of-the-art YOLOv8 for superior accuracy.
-* **Optimized Performance:** Engineered for efficiency, delivering rapid inference.
-* **User-Friendly Demo Application:** Easily visualize and interact with the model's capabilities.
-* **Comprehensive Data Handling:** Streamlined data preparation for seamless integration.
+- **High-Precision Object Detection:** Leverages state-of-the-art YOLOv8 for superior accuracy.
+- **Optimized Performance:** Engineered for efficiency, delivering rapid inference.
+- **User-Friendly Demo Application:** Easily visualize and interact with the model's capabilities.
+- **Comprehensive Data Handling:** Streamlined data preparation for seamless integration.
 
 ---
 
 ## 📸 Glimpse of Observo in Action
 
-* *Insert a high-resolution, full-landscape image of the frontend interface here. Ideally, this would be a screenshot showcasing the object detection results on an image.*
+> *Insert a high-resolution, full-landscape image of the frontend interface here. Ideally, this would be a screenshot showcasing the object detection results on an image.*
 
-    ```markdown
-    ![Frontend Interface Screenshot 1](assets/observo_screenshot_1.png)
-    ```
+```markdown
+![Frontend Interface Screenshot 1](assets/observo_screenshot_1.png)
+```
 
-* *Insert another high-resolution, full-landscape image of the frontend interface here, perhaps demonstrating a different feature or a more complex detection scenario.*
+> *Insert another high-resolution, full-landscape image of the frontend interface here, perhaps demonstrating a different feature or a more complex detection scenario.*
 
-    ```markdown
-    ![Frontend Interface Screenshot 2](assets/observo_screenshot_2.png)
-    ```
+```markdown
+![Frontend Interface Screenshot 2](assets/observo_screenshot_2.png)
+```
 
 ---
 
@@ -50,69 +50,94 @@ conda env create -f environment.yaml
 ```
 
 ### 2. Activate Environment
-```bash
 
+```bash
 conda activate Observo
 ```
 
-📦 Data Preparation
-To begin, you'll need the Falcon Dataset.
+---
 
-Download the Falcon Dataset:
-Access the dataset from here.
+### 📦 Data Preparation
 
-Unzip & Place:
-Unzip the downloaded dataset and place its contents into the following directory structure:
+To begin, you'll need the **Falcon Dataset**.
 
-data/raw/
-Note: The dataset is not included in this repository due to its size. Please download it manually using the provided link.
+- **Download the Falcon Dataset:**  
+  Access the dataset from [here](#). <!-- Add actual link if available -->
 
-🏋️‍♂️ Training the Model
+- **Unzip & Place:**  
+  Unzip the downloaded dataset and place its contents into the following directory structure:
+
+  ```
+  data/raw/
+  ```
+
+> **Note:** The dataset is not included in this repository due to its size. Please download it manually using the provided link.
+
+---
+
+### 🏋️‍♂️ Training the Model
+
 Train Observo on your local machine with a single, straightforward command:
 
 ```bash
-
 python src/train.py
 ```
-🔍 Running Inference
+
+---
+
+### 🔍 Running Inference
+
 Perform object detection on any sample image effortlessly:
 
 ```bash
-
 python src/detect.py data/raw/test/images/sample.jpg
 ```
-🖥️ Demo Application
+
+---
+
+### 🖥️ Demo Application
+
 Experience Observo through its interactive web application:
 
-Navigate to App Directory:
+1. **Navigate to App Directory:**
 
-```bash
+    ```bash
+    cd app
+    ```
 
-cd app
-```
-Install Requirements:
+2. **Install Requirements:**
 
-```bash
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-pip install -r requirements.txt
-```
-Start Backend Server:
-```bash
+3. **Start Backend Server:**
 
-python backend.py
-```
-📊 Performance Metrics
+    ```bash
+    python backend.py
+    ```
+
+---
+
+## 📊 Performance Metrics
+
 Observo delivers exceptional performance on the Falcon dataset:
 
-Precision: ~0.98
-Recall: ~0.95
-mAP@0.5: ~0.89
-mAP@0.5:0.95: ~0.83
-These impressive results were achieved using the YOLOv8 architecture. For an in-depth analysis, including detailed logs and visualizations, please refer to the models/logs/yolov8_observo/ directory.
+- **Precision:** ~0.98  
+- **Recall:** ~0.95  
+- **mAP@0.5:** ~0.89  
+- **mAP@0.5:0.95:** ~0.83  
 
-📝 Project Structure
+These impressive results were achieved using the YOLOv8 architecture.  
+For an in-depth analysis, including detailed logs and visualizations, please refer to the `models/logs/yolov8_observo/` directory.
+
+---
+
+## 📝 Project Structure
+
 The repository is thoughtfully organized for clarity and ease of navigation:
 
+```
 ├── app/                # Web application backend and dependencies
 ├── config/             # Essential configuration files
 ├── data/               # Contains raw and processed datasets (download raw into data/raw/)
@@ -123,18 +148,31 @@ The repository is thoughtfully organized for clarity and ease of navigation:
 ├── templates/          # HTML templates for the web application
 ├── environment.yaml    # Conda environment definition for seamless setup
 ├── README.md           # This project overview and instructions
-🤝 Contributing
+```
+
+---
+
+## 🤝 Contributing
+
 We welcome contributions from the community! If you have suggestions, bug reports, or would like to contribute code:
 
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Submit a pull request with a clear description of your changes.
+1. **Fork** the repository.
+2. **Create a new branch** for your feature or bug fix.
+3. **Submit a pull request** with a clear description of your changes.
+
 For major changes or new features, please open an issue first to discuss the proposed modifications.
 
-📄 License
-This project is open-source and licensed under the MIT License. See the LICENSE file for more details.
+---
 
-✨ Enjoy exploring the universe of possibilities with Observo! Feel free to ⭐️ the repository, open issues, or contribute to its growth. Your feedback and contributions are highly valued.
+## 📄 License
 
+This project is open-source and licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more details.
 
+---
+
+<p align="center">
+  ✨ Enjoy exploring the universe of possibilities with Observo! <br>
+  Feel free to ⭐️ the repository, open issues, or contribute to its growth.<br>
+  Your feedback and contributions are highly valued.
+</p>
 
