@@ -1,5 +1,5 @@
 # 🛰️ VISTA: Visual Inference System for Target Assessment 
-# DualityAI Space Station Model 🚀
+_# DualityAI Space Station Model 🚀_
 
 Welcome to **Observo** — a high-performance AI model for object detection, inspired by the complexity and wonder of space exploration! 🌌
 
