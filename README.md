@@ -1,108 +1,130 @@
-#  VISTA: Visual Inference System for Target Assessment
-#             DualityAI Space Station Model 🚀
 
-Welcome to **Observo** — a high-performance AI model for object detection, inspired by the complexity and wonder of space exploration! 🌌
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python" alt="Python Version">
+  <img src="https://img.shields.io/badge/PyTorch-1.9%2B-orange?style=for-the-badge&logo=pytorch" alt="PyTorch Version">
+  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+</p>
+
+# VISTA: Visual Inference System for Target Assessment 🚀
+## DualityAI Space Station Model | Observo
+
+<p align="center">
+  Welcome to **Observo** — an advanced, high-performance AI model designed for **object detection** with unparalleled precision. Inspired by the vast complexity and endless wonder of space exploration, Observo brings cutting-edge computer vision capabilities to your fingertips. 🌌
+</p>
 
 ---
 
-## ⚡️ Quick Setup
+## ✨ Features & Highlights
 
-1️⃣ **Create Environment**  
+* **High-Precision Object Detection:** Leveraging state-of-the-art YOLOv8 for superior accuracy.
+* **Optimized Performance:** Engineered for efficiency, delivering rapid inference.
+* **User-Friendly Demo Application:** Easily visualize and interact with the model's capabilities.
+* **Comprehensive Data Handling:** Streamlined data preparation for seamless integration.
+
+---
+
+## 📸 Glimpse of Observo in Action
+
+* *Insert a high-resolution, full-landscape image of the frontend interface here. Ideally, this would be a screenshot showcasing the object detection results on an image.*
+
+    ```markdown
+    ![Frontend Interface Screenshot 1](assets/observo_screenshot_1.png)
+    ```
+
+* *Insert another high-resolution, full-landscape image of the frontend interface here, perhaps demonstrating a different feature or a more complex detection scenario.*
+
+    ```markdown
+    ![Frontend Interface Screenshot 2](assets/observo_screenshot_2.png)
+    ```
+
+---
+
+## ⚡️ Quick Setup Guide
+
+Get Observo up and running in a few simple steps!
+
+### 1. Create Environment
+
 ```bash
 conda env create -f environment.yaml
-```
 
-2️⃣ **Activate Environment**  
-```bash
+2. Activate Environment
+Bash
+
 conda activate Observo
-```
+📦 Data Preparation
+To begin, you'll need the Falcon Dataset.
 
----
+Download the Falcon Dataset:
+Access the dataset from here.
 
-## 📦 Data Preparation
+Unzip & Place:
+Unzip the downloaded dataset and place its contents into the following directory structure:
 
-- ⬇️ Download the Falcon Dataset 👉[here](https://falcon.duality.ai/secure/documentation/hackathon?highlight=hackathon) and unzip into the following directory:  
-  ```
-  data/raw/
-  ```
-  *Note: The dataset is not included in this repository due to size constraints. Please download it manually using the link above.*
+data/raw/
+Note: The dataset is not included in this repository due to its size. Please download it manually using the provided link.
 
----
+🏋️‍♂️ Training the Model
+Train Observo on your local machine with a single, straightforward command:
 
-## 🏋️‍♂️ Training
+Bash
 
-Train the model with a single command:  
-```bash
 python src/train.py
-```
+🔍 Running Inference
+Perform object detection on any sample image effortlessly:
 
----
+Bash
 
-## 🔍 Inference
-
-Run object detection on a sample image:  
-```bash
 python src/detect.py data/raw/test/images/sample.jpg
-```
+🖥️ Demo Application
+Experience Observo through its interactive web application:
 
----
+Navigate to App Directory:
 
-## 🖥️ Demo Application
+Bash
 
-1. Move to the app directory:
-    ```bash
-    cd app
-    ```
-2. Install requirements:
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. Start the backend server:
-    ```bash
-    python backend.py
-    ```
+cd app
+Install Requirements:
 
----
+Bash
 
-## 📊 Results
+pip install -r requirements.txt
+Start Backend Server:
 
-- **Precision:** ~0.98
-- **Recall:** ~0.95
-- **mAP@0.5:** ~0.89
-- **mAP@0.5:0.95:** ~0.83
+Bash
 
-*These results were achieved on the Falcon dataset using YOLOv8. See the `models/logs/yolov8_observo/` directory for detailed logs and visualizations.*
+python backend.py
+📊 Performance Metrics
+Observo delivers exceptional performance on the Falcon dataset:
 
----
+Precision: ~0.98
+Recall: ~0.95
+mAP@0.5: ~0.89
+mAP@0.5:0.95: ~0.83
+These impressive results were achieved using the YOLOv8 architecture. For an in-depth analysis, including detailed logs and visualizations, please refer to the models/logs/yolov8_observo/ directory.
 
-## 📝 Project Structure
+📝 Project Structure
+The repository is thoughtfully organized for clarity and ease of navigation:
 
-```
-├── app/                # Web app backend and requirements
-├── config/             # Configuration files
-├── data/               # Data folder (download dataset into data/raw/)
-├── docs/               # Documentation and report outline
-├── models/             # Model weights and logs
-├── notebooks/          # (Optional) Jupyter notebooks for EDA
-├── src/                # Source code for training, detection, utils
-├── templates/          # Web app HTML templates
-├── environment.yaml    # Conda environment definition
-├── README.md           # Project overview and instructions
-```
+├── app/                # Web application backend and dependencies
+├── config/             # Essential configuration files
+├── data/               # Contains raw and processed datasets (download raw into data/raw/)
+├── docs/               # Project documentation and report outlines
+├── models/             # Stores trained model weights and comprehensive logs
+├── notebooks/          # (Optional) Jupyter notebooks for exploratory data analysis (EDA)
+├── src/                # Core source code for training, detection, and utility functions
+├── templates/          # HTML templates for the web application
+├── environment.yaml    # Conda environment definition for seamless setup
+├── README.md           # This project overview and instructions
+🤝 Contributing
+We welcome contributions from the community! If you have suggestions, bug reports, or would like to contribute code:
 
----
+Fork the repository.
+Create a new branch for your feature or bug fix.
+Submit a pull request with a clear description of your changes.
+For major changes or new features, please open an issue first to discuss the proposed modifications.
 
-## 🤝 Contributing
+📄 License
+This project is open-source and licensed under the MIT License. See the LICENSE file for more details.
 
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-✨ Enjoy exploring the universe of possibilities with Observo!  
-Feel free to ⭐️ the repo, open issues, or contribute!
+✨ Enjoy exploring the universe of possibilities with Observo! Feel free to ⭐️ the repository, open issues, or contribute to its growth. Your feedback and contributions are highly valued.
