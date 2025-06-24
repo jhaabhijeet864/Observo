@@ -23,17 +23,16 @@
 
 ---
 
-## 📸 Glimpse of Observo in Action
+## 📸 Glimpse of VISTA in Action
 
-> *Insert a high-resolution, full-landscape image of the frontend interface here. Ideally, this would be a screenshot showcasing the object detection results on an image.*
+![image](https://github.com/user-attachments/assets/dd193d48-df47-4687-8eda-10ce44a7e0d4)
 
-```markdown
-```
 
-> *Insert another high-resolution, full-landscape image of the frontend interface here, perhaps demonstrating a different feature or a more complex detection scenario.*
+<br>
 
-```markdown
-```
+![image](https://github.com/user-attachments/assets/da6f8f5e-2834-4007-9003-6ee1eaab3798)
+
+
 
 ---
 
