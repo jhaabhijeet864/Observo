@@ -8,7 +8,7 @@
 <h2 align="center">DualityAI Space Station Model | Observo</h2>
 
 <p align="center">
-  <b>Welcome to <strong>Observo</strong></b> — an advanced, high-performance AI model designed for <b>object detection</b> with unparalleled precision.<br>
+  <b>Welcome to <strong>VISTA</strong></b> — an advanced, high-performance AI model designed for <b>object detection</b> with unparalleled precision.
   Inspired by the vast complexity and endless wonder of space exploration, Observo brings cutting-edge computer vision capabilities to your fingertips. 🌌
 </p>
 
