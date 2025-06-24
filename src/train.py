@@ -47,7 +47,7 @@ def main():
 
         results = model.train(
             data=data_config,
-            epochs=100,  # Reduced epochs for faster training and less memory usage
+            epochs=200,  # Reduced epochs for faster training and less memory usage
             imgsz=512,  # Reduced image size
             batch=4,    # Reduced batch size
             project='../models/logs',
