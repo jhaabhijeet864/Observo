@@ -47,11 +47,14 @@ Get Observo up and running in a few simple steps!
 
 ```bash
 conda env create -f environment.yaml
+```
 
-2. Activate Environment
-Bash
+### 2. Activate Environment
+```bash
 
 conda activate Observo
+```
+
 📦 Data Preparation
 To begin, you'll need the Falcon Dataset.
 
@@ -67,33 +70,37 @@ Note: The dataset is not included in this repository due to its size. Please dow
 🏋️‍♂️ Training the Model
 Train Observo on your local machine with a single, straightforward command:
 
-Bash
+```bash
 
 python src/train.py
+```
 🔍 Running Inference
 Perform object detection on any sample image effortlessly:
 
-Bash
+```bash
 
 python src/detect.py data/raw/test/images/sample.jpg
+```
 🖥️ Demo Application
 Experience Observo through its interactive web application:
 
 Navigate to App Directory:
 
-Bash
+```bash
 
 cd app
+```
 Install Requirements:
 
-Bash
+```bash
 
 pip install -r requirements.txt
+```
 Start Backend Server:
-
-Bash
+```bash
 
 python backend.py
+```
 📊 Performance Metrics
 Observo delivers exceptional performance on the Falcon dataset:
 
@@ -128,3 +135,6 @@ For major changes or new features, please open an issue first to discuss the pro
 This project is open-source and licensed under the MIT License. See the LICENSE file for more details.
 
 ✨ Enjoy exploring the universe of possibilities with Observo! Feel free to ⭐️ the repository, open issues, or contribute to its growth. Your feedback and contributions are highly valued.
+
+
+
