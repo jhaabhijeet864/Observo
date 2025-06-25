@@ -1,10 +1,16 @@
-# Python
+# =====================
+# Python & Data Science
+# =====================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
 env/
+.observo_env/
+venv/
+ENV/
+.venv/
 build/
 develop-eggs/
 dist/
@@ -21,24 +27,99 @@ var/
 *.egg
 
 # Data files
-data/raw/
-
-# Conda environment
-/env/
-/observo_env/
+/data/
+/data/raw/
+/data/raw/data/
+/data/raw/ENV_SETUP/
 
 # Model files
 *.pth
 *.onnx
 *.h5
 *.pt
+/models/weights/
+/models/logs/
+
+# Uploads
+/uploads/
 
 # Installers
 miniconda.exe
 
-# IDE
+# IDE & Editor
 .idea/
 .vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
 
-#nbk
+# Jupyter Notebooks
 notebooks/
+*.ipynb
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js & React Native
+node_modules/
+dist/
+dist-ssr/
+*.local
+mobile/node_modules/
+mobile/dist/
+mobile/build/
+mobile/coverage/
+
+# React Native Android/iOS
+mobile/android/app/build/
+mobile/ios/build/
+mobile/ios/Pods/
+mobile/build/
+mobile/.gradle/
+mobile/.expo/
+
+# Bundle artifact
+*.jsbundle
+
+# Fastlane
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# Ruby / CocoaPods
+mobile/ios/Pods/
+mobile/vendor/bundle/
+
+# Metro
+.metro-health-check*
+
+# Misc
+*.env
+.env.*
+.envrc
+*.bak
+*.tmp
+*.orig
+*.old
+
+# Render deployment
+render.yaml
+
+# Exclude model weights, logs, uploads, and sensitive files from accidental commit
+# (Uncomment below if you want to keep these tracked)
+# !models/weights/.gitkeep
+# !uploads/.gitkeep
+
+# =====================
+# End of .gitignore
+# =====================

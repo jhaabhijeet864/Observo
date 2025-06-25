@@ -149,6 +149,14 @@ The repository is thoughtfully organized for clarity and ease of navigation:
 
 ---
 
+## ⚠️ Important: Do NOT Commit Sensitive or Large Files
+
+- **Model weights, logs, uploads, and raw data are excluded from version control via `.gitignore`.**
+- **Never commit files in `models/weights/`, `models/logs/`, `uploads/`, or `data/raw/` to GitHub.**
+- **Notebooks and environment folders are also excluded.**
+
+---
+
 ## 🤝 Contributing
 
 We welcome contributions from the community! If you have suggestions, bug reports, or would like to contribute code:

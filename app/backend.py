@@ -1,25 +1,18 @@
-from flask import Flask, request, render_template, send_from_directory
-import os
-from src.detect import detect
+from flask import Flask
+from flask_cors import CORS
+import logging
+from app.routes import routes
+
+logging.basicConfig(level=logging.INFO,
+                   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
-UPLOAD = 'uploads'
-os.makedirs(UPLOAD, exist_ok=True)
+CORS(app)
 
-@app.route('/', methods=['GET','POST'])
-def index():
-    if request.method=='POST':
-        file = request.files['image']
-        path = os.path.join(UPLOAD, file.filename)
-        file.save(path)
-        results = detect(path, model_path='models/weights/best.pt')
-        saved = results[0].masks.data if results else None
-        return render_template('index.html', img_out=os.path.basename(results[0].path[0]))
-    return render_template('index.html')
-
-@app.route('/uploads/<path:filename>')
-def uploads(filename):
-    return send_from_directory('models/logs/detect', filename)
+# Register blueprint
+app.register_blueprint(routes)
 
 if __name__=='__main__':
-    app.run(debug=True)
+    logger.info("Starting Observo backend server")
+    app.run(host='0.0.0.0', port=5000, debug=True)

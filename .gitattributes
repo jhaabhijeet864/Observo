@@ -1,0 +1,11 @@
+* text=auto
+*.py linguist-language=Python
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.json text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.ipynb text eol=lf
