@@ -120,10 +120,10 @@ Experience VISTA-S through its interactive web application:
 
 Observo delivers exceptional performance on the Falcon dataset:
 
-- **Precision:** ~0.98  
-- **Recall:** ~0.95  
-- **mAP@0.5:** ~0.89  
-- **mAP@0.5:0.95:** ~0.83  
+- **Precision:** ~0.97967  
+- **Recall:** ~0.90879
+- **mAP@0.5:** ~0.94157 
+- **mAP@0.5:0.95:** ~0.88426
 
 These impressive results were achieved using the YOLOv8 architecture.  
 For an in-depth analysis, including detailed logs and visualizations, please refer to the `models/logs/yolov8_observo/` directory.
