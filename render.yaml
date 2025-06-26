@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: observo-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -c gunicorn_config.py app.backend:app"
+    plan: free
+    runtime: python3.9
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: PYTHONPATH
+        value: "."
+      - key: UPLOAD_DIR
+        value: "./uploads"
+      - key: SAVE_DIR
+        value: "./detections"
+      - key: MODEL_PATH
+        value: "./models/weights/best.pt"
+    autoDeploy: true
