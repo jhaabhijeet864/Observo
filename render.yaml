@@ -2,10 +2,12 @@ services:
   - type: web
     name: observo-backend
     env: python
-    buildCommand: pip install -r requirements_minimal.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT app.simple_backend:app
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app.simple_backend:app --log-level info
     plan: free
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: PORT
+        value: "10000"
     autoDeploy: true

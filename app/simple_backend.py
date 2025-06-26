@@ -1,41 +1,34 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-import os
 import logging
+import os
 
 # Configure logging
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.INFO,
+                   format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-app = Flask(__name__)
-CORS(app)
+# Create the Flask application
+app = Flask(__name__, static_folder=None)
 
-@app.route('/')
-def home():
+# Configure CORS - add your Netlify URL
+CORS(app, origins=['*', 'https://vista-s.netlify.app', 'http://localhost:3000'])
+
+# Health check endpoint
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({'status': 'healthy'}), 200
+
+# Basic API endpoint for testing
+@app.route('/api/test', methods=['GET'])
+def test_endpoint():
     return jsonify({
-        "message": "Observo Backend API is running!",
-        "status": "healthy",
-        "endpoints": [
-            "/api/health",
-            "/api/detect"
-        ]
+        'message': 'Observo API is running',
+        'status': 'success'
     })
 
-@app.route('/api/health')
-def health():
-    return jsonify({
-        "status": "healthy",
-        "message": "API is working correctly"
-    })
-
-@app.route('/api/detect', methods=['POST'])
-def detect_placeholder():
-    return jsonify({
-        "message": "Detection endpoint placeholder - full functionality will be added once deployment is working",
-        "status": "success"
-    })
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    logger.info(f"Starting Flask app on port {port}")
+# This makes the app work both locally and on Render
+if __name__=='__main__':
+    port = int(os.environ.get('PORT', 10000))
+    logger.info(f"Starting minimal Observo backend server on port {port}")
     app.run(host='0.0.0.0', port=port, debug=False)
