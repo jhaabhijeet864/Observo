@@ -27,6 +27,15 @@ def test_endpoint():
         'status': 'success'
     })
 
+# Root endpoint for basic access
+@app.route('/', methods=['GET'])
+def root():
+    return jsonify({
+        'message': 'Welcome to Observo API',
+        'status': 'online',
+        'endpoints': ['/health', '/api/test']
+    })
+
 # This makes the app work both locally and on Render
 if __name__=='__main__':
     port = int(os.environ.get('PORT', 10000))
