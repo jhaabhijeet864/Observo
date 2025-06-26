@@ -120,6 +120,11 @@ mobile/vendor/bundle/
 # !models/weights/.gitkeep
 # !uploads/.gitkeep
 
+  models/weights/
+  data/
+  uploads/
+  notebooks/
+
 # =====================
 # End of .gitignore
 # =====================
