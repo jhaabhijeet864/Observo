@@ -1,7 +1,12 @@
 """WSGI entry point for Render deployment"""
-import os
-import sys
-from app.simple_backend import app
+print("[WSGI] wsgi.py is being executed.")
+try:
+    import os
+    import sys
+    from app.simple_backend import app
+except Exception as e:
+    print(f"[WSGI] Import error: {e}", file=sys.stderr)
+    raise
 
 # Explicitly print the port for debugging
 port = int(os.environ.get('PORT', 10000))
