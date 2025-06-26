@@ -135,16 +135,62 @@ For an in-depth analysis, including detailed logs and visualizations, please ref
 The repository is thoughtfully organized for clarity and ease of navigation:
 
 ```
-├── app/                # Web application backend and dependencies
-├── config/             # Essential configuration files
-├── data/               # Contains raw and processed datasets (download raw into data/raw/)
-├── docs/               # Project documentation and report outlines
-├── models/             # Stores trained model weights and comprehensive logs
-├── notebooks/          # (Optional) Jupyter notebooks for exploratory data analysis (EDA)
-├── src/                # Core source code for training, detection, and utility functions
-├── templates/          # HTML templates for the web application
-├── environment.yaml    # Conda environment definition for seamless setup
-├── README.md           # This project overview and instructions
+├── app/                     # Flask backend application
+│   ├── backend.py           # Main Flask application entry point
+│   ├── routes.py            # API routes and endpoints
+│   ├── simple_backend.py    # Simplified backend for deployment testing
+│   ├── requirements.txt     # Python dependencies for the app
+│   └── templates/           # HTML templates for web interface
+│       └── index.html       # Main web interface template
+├── config/                  # Configuration files
+│   └── observo.yaml         # YOLO training configuration
+├── data/                    # Dataset storage (excluded from git)
+│   └── raw/                 # Raw training data and parameters
+│       ├── classes.txt      # Class definitions
+│       ├── predict.py       # Prediction utilities
+│       ├── train.py         # Training utilities
+│       ├── visualize.py     # Visualization utilities
+│       ├── yolo_params.yaml # YOLO model parameters
+│       └── data/            # Training/validation/test datasets
+├── docs/                    # Project documentation
+│   └── report_outline.md    # Project report structure
+├── mobile/                  # React Native mobile application
+│   ├── src/                 # Mobile app source code
+│   │   ├── App.js           # Main mobile app component
+│   │   ├── api/             # API integration for mobile
+│   │   └── screens/         # Mobile app screens
+│   ├── package.json         # Mobile app dependencies
+│   ├── README.md            # Mobile app setup instructions
+│   └── SETUP.md             # Detailed mobile setup guide
+├── models/                  # Model storage (excluded from git)
+│   ├── weights/             # Trained model weights (.pt files)
+│   └── logs/                # Training logs and results
+├── notebooks/               # Jupyter notebooks (excluded from git)
+│   ├── EDA.ipynb            # Exploratory data analysis
+│   └── train_yolov8.ipynb   # YOLOv8 training notebook
+├── src/                     # Core detection and training code
+│   ├── detect.py            # Object detection implementation
+│   ├── train.py             # Model training script
+│   ├── utils.py             # Utility functions
+│   └── constraints.txt      # Package version constraints
+├── uploads/                 # User uploaded images (excluded from git)
+├── Web_App_frontend/        # React/TypeScript web frontend
+│   ├── src/                 # Frontend source code
+│   │   ├── components/      # Reusable UI components
+│   │   ├── pages/           # Application pages
+│   │   └── hooks/           # Custom React hooks
+│   ├── package.json         # Frontend dependencies
+│   └── vite.config.ts       # Build configuration
+├── environment.yaml         # Conda environment definition
+├── requirements.txt         # Python dependencies (root level)
+├── requirements_minimal.txt # Minimal dependencies for deployment testing
+├── render.yaml              # Render deployment configuration
+├── gunicorn_config.py       # Production server configuration
+├── Procfile                 # Alternative deployment configuration
+├── .gitignore               # Git ignore patterns
+├── .gitattributes           # Git file handling rules
+├── DEPLOYMENT.md            # Deployment instructions and guides
+└── README.md                # Project overview and setup instructions
 ```
 
 ---
