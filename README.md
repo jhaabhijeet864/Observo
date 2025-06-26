@@ -25,14 +25,19 @@
 
 ## 📸 Glimpse of VISTA in Action
 
-![image](https://github.com/user-attachments/assets/dd193d48-df47-4687-8eda-10ce44a7e0d4)
-
+![Screenshot 2025-06-26 111639](https://github.com/user-attachments/assets/ef5defcd-19df-4515-be84-acdd09346f24)
 
 <br>
 
-![image](https://github.com/user-attachments/assets/da6f8f5e-2834-4007-9003-6ee1eaab3798)
+![Screenshot 2025-06-26 111656](https://github.com/user-attachments/assets/bd32a41b-ecf9-48e3-b233-11f638d9783c)
 
+<br>
 
+![Screenshot 2025-06-26 111707](https://github.com/user-attachments/assets/ad7b5e0a-3c0a-47b6-8202-efc10d108cd2)
+
+<br>
+
+![Screenshot 2025-06-26 111724](https://github.com/user-attachments/assets/1b65551c-454b-4799-b8dc-136a10ea9b26)
 
 ---
 
