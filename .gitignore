@@ -112,8 +112,8 @@ mobile/vendor/bundle/
 *.orig
 *.old
 
-# Render deployment
-render.yaml
+# Do NOT ignore these important deployment files
+# render.yaml
 
 # Exclude model weights, logs, uploads, and sensitive files from accidental commit
 # (Uncomment below if you want to keep these tracked)

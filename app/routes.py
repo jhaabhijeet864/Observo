@@ -13,8 +13,12 @@ logger = logging.getLogger(__name__)
 
 routes = Blueprint('routes', __name__)
 
-UPLOAD = 'uploads'
+# Use absolute path for uploads in production, or relative path in development
+UPLOAD = os.environ.get('UPLOAD_DIR', 'uploads')
 os.makedirs(UPLOAD, exist_ok=True)
+
+# Define model path based on environment
+MODEL_PATH = os.environ.get('MODEL_PATH', os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'weights', 'best.pt'))
 
 @routes.route('/', methods=['GET','POST'])
 def index():
@@ -22,7 +26,7 @@ def index():
         file = request.files['image']
         path = os.path.join(UPLOAD, file.filename)
         file.save(path)
-        results = detect(path, model_path='../models/weights/best.pt')
+        results = detect(path, model_path=MODEL_PATH)
         saved = results[0].masks.data if results else None
         return render_template('index.html', img_out=os.path.basename(results[0].path[0]))
     return render_template('index.html')
@@ -42,7 +46,7 @@ def api_detect():
         path = os.path.join(UPLOAD, filename)
         file.save(path)
         logger.info(f"File saved to {path}")
-        results = detect(path, model_path='../models/weights/best.pt')
+        results = detect(path, model_path=MODEL_PATH)
         logger.info(f"Detection complete, processing results")
         detections = []
         if results and len(results) > 0:
