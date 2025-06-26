@@ -2,8 +2,8 @@ services:
   - type: web
     name: observo-backend
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn -c gunicorn_config.py app.backend:app"
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT app.backend:app
     plan: free
     runtime: python3.9
     envVars:
