@@ -1,13 +1,19 @@
 services:
   - type: web
-    name: observo-backend
+    name: vista-s-backend
     env: python
-    buildCommand: pip install -r requirements_minimal.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT wsgi:application --log-level debug
+    runtime: python
+    buildCommand: |
+      python -m pip install --upgrade pip
+      pip install -r requirements_minimal.txt
+    startCommand: gunicorn --bind 0.0.0.0:$PORT wsgi:application --workers 1 --threads 2 --timeout 120 --log-level info --access-logfile - --error-logfile -
     plan: free
     envVars:
       - key: PYTHONUNBUFFERED
         value: "1"
-      - key: PORT
-        value: "10000"
+      - key: PYTHONDONTWRITEBYTECODE
+        value: "1"
+      - key: WEB_CONCURRENCY
+        value: "1"
+    healthCheckPath: /health
     autoDeploy: true

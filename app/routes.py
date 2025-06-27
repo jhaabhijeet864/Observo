@@ -91,9 +91,10 @@ def api_images(filename):
     return send_from_directory('../models/logs/detect', filename)
 
 @routes.route('/api/health', methods=['GET'])
-def health_check():
+def api_health_check():
     return jsonify({
         'status': 'healthy',
         'timestamp': datetime.now().isoformat(),
-        'version': '1.0.0'
+        'version': '1.0.0',
+        'source': 'routes_blueprint'
     })
