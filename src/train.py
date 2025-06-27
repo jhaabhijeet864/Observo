@@ -1,8 +1,20 @@
 import os
 import sys
-from ultralytics import YOLO
-import torch
-import yaml
+
+# Add the current directory to Python path to help with imports
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, current_dir)
+sys.path.insert(0, os.path.dirname(current_dir))
+
+try:
+    from ultralytics import YOLO
+    import torch
+    import yaml
+except ImportError as e:
+    print(f"❌ Import Error: {e}")
+    print("💡 Please ensure you're using the correct Python environment with ultralytics installed")
+    print("   Try: pip install ultralytics torch torchvision")
+    sys.exit(1)
 
 def patch_torchvision_nms_to_cpu():
     try:
