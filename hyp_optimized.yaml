@@ -1,0 +1,54 @@
+# Optimized Hyperparameters for YOLO Performance Boost
+# Use these settings to improve model performance without changing model size
+
+# Learning rate settings (CRITICAL for performance)
+lr0: 0.01          # Initial learning rate (0.01 for SGD)
+lrf: 0.01          # Final learning rate factor (lr0 * lrf)
+momentum: 0.937    # SGD momentum/Adam beta1
+weight_decay: 0.0005  # Optimizer weight decay 5e-4
+
+# Loss function weights (tune for your dataset)
+box: 7.5          # Box loss gain
+cls: 0.5          # Classification loss gain  
+dfl: 1.5          # Distribution focal loss gain
+
+# Advanced augmentation settings
+hsv_h: 0.015      # Image HSV-Hue augmentation (fraction)
+hsv_s: 0.7        # Image HSV-Saturation augmentation (fraction)
+hsv_v: 0.4        # Image HSV-Value augmentation (fraction)
+degrees: 10.0     # Image rotation (+/- deg)
+translate: 0.1    # Image translation (+/- fraction)
+scale: 0.5        # Image scale (+/- gain)
+shear: 2.0        # Image shear (+/- deg)
+perspective: 0.0002  # Image perspective (+/- fraction), range 0-0.001
+flipud: 0.5       # Image flip up-down (probability)
+fliplr: 0.5       # Image flip left-right (probability)
+
+# Advanced training augmentation
+mosaic: 1.0       # Image mosaic (probability) - KEEP HIGH
+mixup: 0.15       # Image mixup (probability) - BOOSTS PERFORMANCE
+copy_paste: 0.3   # Segment copy-paste (probability)
+
+# Training settings
+warmup_epochs: 3.0    # Warmup epochs (fractions ok)
+warmup_momentum: 0.8  # Warmup initial momentum
+warmup_bias_lr: 0.1   # Warmup initial bias lr
+close_mosaic: 10      # Disable mosaic augmentation for final epochs
+
+# Validation settings  
+val: True         # Validate/test during training
+split: val        # Dataset split to use for validation (val/test/train)
+save_json: False  # Save results to JSON file
+save_hybrid: False # Save hybrid version of labels (labels + additional predictions)
+conf: 0.001       # Object confidence threshold for detection
+iou: 0.6          # Intersection over union (IoU) threshold for NMS
+max_det: 1000     # Maximum number of detections per image
+half: False       # Use half precision (FP16)
+dnn: False        # Use OpenCV DNN for ONNX inference
+
+# Additional optimization settings
+cos_lr: True      # Use cosine learning rate scheduler
+rect: False       # Rectangular training (disable for better augmentation)
+overlap_mask: True    # Masks should overlap during training
+mask_ratio: 4     # Mask downsample ratio
+dropout: 0.0      # Use dropout regularization (only in classification tasks)
