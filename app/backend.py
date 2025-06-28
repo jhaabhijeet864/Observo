@@ -20,17 +20,27 @@ app = Flask(__name__)
 
 # Configure CORS for frontend connection
 CORS(app, 
-     origins=['https://vista-s-frontend-cwx5jsxdy-abhijeet-jhas-projects.vercel.app'],
+     origins=[
+         'https://vista-s-frontend-cwx5jsxdy-abhijeet-jhas-projects.vercel.app',
+         'https://vista-s-frontend.vercel.app',
+         'https://vista-s-frontend-jhaabhijeet864-abhijeet-jhas-projects.vercel.app/',
+         'https://vista-s-frontend-abhijeet-jhas-projects.vercel.app/',
+         'http://localhost:3000',
+         'http://localhost:8080'
+     ],
      methods=['GET', 'POST', 'OPTIONS'],
      allow_headers=['Content-Type', 'Authorization'])
 
+
+
 # Import and register routes Blueprint
 try:
-    from app.routes import routes
+    from app.routes import routes  # Correct import for Render and most production setups
     app.register_blueprint(routes)
     logger.info("✅ Routes Blueprint registered successfully")
 except ImportError as e:
     logger.error(f"❌ Could not import routes Blueprint: {e}")
+    # Fallback routes...
     # Create fallback routes
     @app.route('/')
     def home():
@@ -48,6 +58,9 @@ except ImportError as e:
             'version': '1.0.0'
         })
     
+
+
+
     logger.warning("⚠️ Using fallback routes due to import error")
 
 # Error handler
