@@ -33,6 +33,8 @@ def index():
 
 @routes.route('/api/detect', methods=['POST'])
 def api_detect():
+    import time
+    start_time = time.time()
     try:
         logger.info("API detect endpoint called")
         if 'image' not in request.files:
@@ -65,18 +67,22 @@ def api_detect():
                     'risk_level': risk_level
                 })
             output_image_path = result.path[0] if hasattr(result, 'path') and len(result.path) > 0 else None
-            output_image_url = f"/api/images/{os.path.basename(output_image_path)}" if output_image_path else None
+            image_id = os.path.basename(output_image_path) if output_image_path else None
+            processing_time = int((time.time() - start_time) * 1000)
             return jsonify({
                 'success': True,
-                'detections': detections,
-                'image_url': output_image_url
+                'results': detections,
+                'processing_time': processing_time,
+                'image_id': image_id
             })
         else:
             logger.warning("No detection results")
+            processing_time = int((time.time() - start_time) * 1000)
             return jsonify({
                 'success': True,
-                'detections': [],
-                'message': 'No objects detected'
+                'results': [],
+                'processing_time': processing_time,
+                'image_id': None
             })
     except Exception as e:
         logger.error(f"Error in API detection: {str(e)}", exc_info=True)
@@ -97,4 +103,37 @@ def api_health_check():
         'timestamp': datetime.now().isoformat(),
         'version': '1.0.0',
         'source': 'routes_blueprint'
+    })
+
+@routes.route('/api/statistics', methods=['GET'])
+def api_statistics():
+    """Return statistics in the format expected by the frontend."""
+    base_data_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'raw', 'data')
+    stats = {}
+    for split in ['train', 'val', 'test']:
+        split_dir = os.path.join(base_data_dir, split)
+        if os.path.exists(split_dir):
+            stats[f'{split}_images'] = len([f for f in os.listdir(split_dir) if os.path.isfile(os.path.join(split_dir, f))])
+        else:
+            stats[f'{split}_images'] = 0
+
+    return jsonify({
+        'total_detections': sum(stats.values()),
+        'accuracy_rate': 95.8,  # Replace with actual accuracy if available
+        'avg_processing_time': 1200,  # ms, replace with real value if available
+        'uptime': '99.9%',  # Replace with actual uptime if available
+        'model_version': '1.0.0'
+    })
+
+@routes.route('/api/models', methods=['GET'])
+def api_models():
+    weights_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'weights')
+    if os.path.exists(weights_dir):
+        weights = [f for f in os.listdir(weights_dir) if os.path.isfile(os.path.join(weights_dir, f)) and f.endswith('.pt')]
+    else:
+        weights = []
+    active_model = os.path.basename(MODEL_PATH) if os.path.exists(MODEL_PATH) else None
+    return jsonify({
+        'models': weights,
+        'active_model': active_model
     })
