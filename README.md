@@ -28,16 +28,6 @@
 
 [![Watch the video](https://img.youtube.com/vi/gH7p3Jfavg0/maxresdefault.jpg)](https://youtu.be/gH7p3Jfavg0?si=kfichBROCP6rzNP4)
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ef5defcd-19df-4515-be84-acdd09346f24" width="47%" alt="Vista Sample 1">
-  <img src="https://github.com/user-attachments/assets/bd32a41b-ecf9-48e3-b233-11f638d9783c" width="47%" alt="Vista Sample 2">
-  <br><br>
-  <img src="https://github.com/user-attachments/assets/ad7b5e0a-3c0a-47b6-8202-efc10d108cd2" width="47%" alt="Vista Sample 3">
-  <img src="https://github.com/user-attachments/assets/1b65551c-454b-4799-b8dc-136a10ea9b26" width="47%" alt="Vista Sample 4">
-</p>
-
-
-
 ---
 
 ## ⚡ Quickstart
@@ -193,6 +183,13 @@ For detailed logs and more metrics, see the `models/logs/yolov8_observo/` direct
 └── README.md
 ```
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ef5defcd-19df-4515-be84-acdd09346f24" width="47%" alt="Vista Sample 1">
+  <img src="https://github.com/user-attachments/assets/bd32a41b-ecf9-48e3-b233-11f638d9783c" width="47%" alt="Vista Sample 2">
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/ad7b5e0a-3c0a-47b6-8202-efc10d108cd2" width="47%" alt="Vista Sample 3">
+  <img src="https://github.com/user-attachments/assets/1b65551c-454b-4799-b8dc-136a10ea9b26" width="47%" alt="Vista Sample 4">
+</p>
 ---
 
 ## ⚠️ DO NOT COMMIT SENSITIVE OR LARGE FILES
